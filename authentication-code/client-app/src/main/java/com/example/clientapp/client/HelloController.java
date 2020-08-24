@@ -31,6 +31,7 @@ public class HelloController {
             map.add("redirect_uri", "http://localhost:8082/index.html");
             map.add("grant_type", "authorization_code");
             Map<String, String> resp = restTemplate.postForObject("http://localhost:8080/oauth/token", map, Map.class);
+            System.out.println(resp);
             String access_token = resp.get("access_token");
             System.out.println(access_token);
             HttpHeaders httpHeaders = new HttpHeaders();
